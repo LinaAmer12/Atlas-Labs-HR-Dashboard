@@ -53,14 +53,11 @@ Figures below are read directly from the dashboard pages in this repository (sam
 
 ## Data model
 
-Five Excel tables loaded into Power BI: one employee table, one performance review table and three lookup tables.
+Five Excel tables: one employee table, one performance review table linked to it by `EmployeeID`, and three lookup tables that translate numeric codes into labels.
 
 ```mermaid
 erDiagram
     Employee ||--o{ PerformanceRating : "EmployeeID"
-    EducationLevel ||--o{ Employee : "Education"
-    SatisfiedLevel ||--o{ PerformanceRating : "satisfaction scores"
-    RatingLevel ||--o{ PerformanceRating : "self and manager rating"
     Employee {
         string EmployeeID
         string Department
